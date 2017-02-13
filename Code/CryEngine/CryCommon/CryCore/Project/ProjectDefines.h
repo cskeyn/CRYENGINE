@@ -12,12 +12,6 @@
 // This was chewing up a lot of CPU time just waiting for a connection
 #define NO_LIVECREATE
 
-// [VR]
-// Optional VR IHmdRenderer integration, note that HMD SDKs are implemented separately in plug-ins.
-#if !defined(DEDICATED_SERVER) && defined(CRY_PLATFORM_WINDOWS)
-	#define INCLUDE_VR_RENDERING
-#endif
-
 // Scaleform base configuration
 #if defined(DEDICATED_SERVER)
 	#undef INCLUDE_SCALEFORM_SDK   // Not used in dedicated server
@@ -36,11 +30,6 @@
 		#define ENABLE_STATS_AGENT
 	#endif
 #endif
-
-// The following definitions are used by Sandbox and RC to determine which platform support is needed
-#define TOOLS_SUPPORT_POWERVR
-#define TOOLS_SUPPORT_DURANGO
-#define TOOLS_SUPPORT_ORBIS
 
 // Durango SDK and Orbis SDK are 64-bit only
 #if !(CRY_PLATFORM_WINDOWS && CRY_PLATFORM_64BIT)
